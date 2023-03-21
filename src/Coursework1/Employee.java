@@ -38,10 +38,18 @@ public class Employee {
         return this.salary;
     }
 
+
+    public void setDepartment(int department) {
+    this.department = department;
+    }
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
     @Override
     public String toString() {
-        return "Employee{" + new Counter().getId() +
-                "name='" + name + '\'' +
+        return "Employee{id= " + new Counter().getId() +
+                " name='" + name + '\'' +
                 ", patronymic='" + patronymic + '\'' +
                 ", surname='" + surname + '\'' +
                 ", department=" + department +
