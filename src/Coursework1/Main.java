@@ -25,7 +25,9 @@ public class Main {
 //        midSalary();
 //        printEmployeeNames();
 //        indexSalary();
-        minDeptSal();
+//        minDeptSal(3);
+//        maxDeptSal(5);
+        sumDeptSal(2);
     }
 
 
@@ -91,11 +93,7 @@ public class Main {
         }
     }
 
-
-    public static void minDeptSal() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Укажите номер отдела");
-        int dept = scanner.nextInt();
+    public static void minDeptSal(int dept) {
         int minSalary = 2_147_483_647;
         for (Employee i : employee) {
             int j = i.getDepartment();
@@ -109,6 +107,30 @@ public class Main {
         }
         System.out.println("Минимальная зарплата в отделе " + minSalary);
     }
+    public static void maxDeptSal(int dept) {
+        int maxSalary = 0;
+        for (Employee i : employee) {
+            int j = i.getDepartment();
+            if (j == dept) {
+                int a = i.getSalary();
+                if (a > maxSalary) {
+                    maxSalary = a;
+                }
+            }
 
+        }
+        System.out.println("Максимальная зарплата в отделе " + maxSalary);
+    }
+    public static void sumDeptSal(int dept) {
+        int sumDeptSalary = 0;
+        for (Employee i : employee) {
+            int j = i.getDepartment();
+            if (j == dept) {
+                int a = i.getSalary();
+                    sumDeptSalary += a;
+            }
 
+        }
+        System.out.println("Затраты на зарплату в отделе " + sumDeptSalary);
+    }
 }
