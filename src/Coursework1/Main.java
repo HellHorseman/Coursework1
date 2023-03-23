@@ -15,13 +15,14 @@ public class Main {
         employee[7] = new Employee("Имя", "Отчество", "Фамилия", 4, 17_098);
         employee[8] = new Employee("Имя", "Отчество", "Фамилия", 5, 18_056);
         employee[9] = new Employee("Имя", "Отчество", "Фамилия", 5, 20_120);
-        print();
-        sumSalary();
-        System.out.println("Сумма зарплаты сотрудников " + sumSalary());
+//        print();
+//        sumSalary();
+//        System.out.println("Сумма зарплаты сотрудников " + sumSalary());
         scanMinSalary();
-        scanMaxSalary();
-        midSalary();
-        printEmployeeNames();
+//        scanMaxSalary();
+//        midSalary();
+//        printEmployeeNames();
+//        indexSalary();
     }
 
 
@@ -76,6 +77,16 @@ public class Main {
             System.out.println(n + " " + p + " " + s);
         }
     }
+
+    public static void indexSalary() {
+        for (Employee i : employee) {
+            int j = i.getSalary();
+            int index = (j / 100) * 15;
+            j = j + index;
+            System.out.println("При повышении на 15%, зарплата соответственно " + j);
+        }
+    }
+
 }
 
 
