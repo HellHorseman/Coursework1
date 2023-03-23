@@ -1,5 +1,7 @@
 package Coursework1;
 
+import java.util.Scanner;
+
 public class Main {
     static Employee[] employee = new Employee[10];
 
@@ -84,15 +86,20 @@ public class Main {
             int j = i.getSalary();
             int index = (j / 100) * 15;
             j = j + index;
+            i.setSalary(j);
             System.out.println("При повышении на 15%, зарплата соответственно " + j);
         }
     }
 
+
     public static void minDeptSal() {
-        int minSalary = employee[0].getSalary();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Укажите номер отдела");
+        int dept = scanner.nextInt();
+        int minSalary = 2_147_483_647;
         for (Employee i : employee) {
             int j = i.getDepartment();
-            if (j == 3) {
+            if (j == dept) {
                 int a = i.getSalary();
                 if (a < minSalary) {
                     minSalary = a;
@@ -102,5 +109,6 @@ public class Main {
         }
         System.out.println("Минимальная зарплата в отделе " + minSalary);
     }
+
 
 }
