@@ -1,7 +1,5 @@
 package Coursework1;
 
-import java.util.Scanner;
-
 public class Main {
     static Employee[] employee = new Employee[10];
 
@@ -27,7 +25,12 @@ public class Main {
 //        indexSalary();
 //        minDeptSal(3);
 //        maxDeptSal(5);
-        sumDeptSal(2);
+//        sumDeptSal(2);
+//        midDeptSal(4);
+//        indexDeptSal(1, 15);
+//        printDeptEmp(5);
+//        scanPoor(30000);
+//        scanRich(30000);
     }
 
 
@@ -88,13 +91,12 @@ public class Main {
             int j = i.getSalary();
             int index = (j / 100) * 15;
             j = j + index;
-            i.setSalary(j);
             System.out.println("При повышении на 15%, зарплата соответственно " + j);
         }
     }
 
     public static void minDeptSal(int dept) {
-        int minSalary = 2_147_483_647;
+        int minSalary = Integer.MAX_VALUE;
         for (Employee i : employee) {
             int j = i.getDepartment();
             if (j == dept) {
@@ -107,8 +109,9 @@ public class Main {
         }
         System.out.println("Минимальная зарплата в отделе " + minSalary);
     }
+
     public static void maxDeptSal(int dept) {
-        int maxSalary = 0;
+        int maxSalary = Integer.MIN_VALUE;
         for (Employee i : employee) {
             int j = i.getDepartment();
             if (j == dept) {
@@ -121,16 +124,89 @@ public class Main {
         }
         System.out.println("Максимальная зарплата в отделе " + maxSalary);
     }
+
     public static void sumDeptSal(int dept) {
         int sumDeptSalary = 0;
         for (Employee i : employee) {
             int j = i.getDepartment();
             if (j == dept) {
                 int a = i.getSalary();
-                    sumDeptSalary += a;
+                sumDeptSalary += a;
             }
 
         }
         System.out.println("Затраты на зарплату в отделе " + sumDeptSalary);
     }
+
+    public static void midDeptSal(int dept) {
+        int sumDeptSalary = 0;
+        int midDeptSalary = 0;
+        int count = 0;
+        for (Employee i : employee) {
+            int j = i.getDepartment();
+            if (j == dept) {
+                int a = i.getSalary();
+                count++;
+                sumDeptSalary += a;
+                midDeptSalary = sumDeptSalary / count;
+            }
+
+        }
+        System.out.println("Средняя зарплата в отделе " + midDeptSalary);
+    }
+
+    public static void indexDeptSal(int dept, int percent) {
+        for (Employee i : employee) {
+            int j = i.getDepartment();
+            if (j == dept) {
+                int a = i.getSalary();
+                int index = (a / 100) * percent;
+                a = a + index;
+                System.out.println("При повышении на " + percent + "%, зарплата соответственно " + a);
+            }
+        }
+    }
+
+    public static void printDeptEmp(int dept) {
+        for (Employee i : employee) {
+            int j = i.getDepartment();
+            if (j == dept) {
+                String n = i.getName();
+                String p = i.getPatronymic();
+                String s = i.getSurname();
+                int a = i.getSalary();
+                System.out.println(n + " " + p + " " + s + " " + a);
+            }
+        }
+    }
+
+    public static void scanPoor(int limitSalary) {
+        for (Employee i : employee) {
+            int j = i.getSalary();
+            String n = i.getName();
+            String p = i.getPatronymic();
+            String s = i.getSurname();
+            int d = i.getDepartment();
+            int a = i.getSalary();
+            if (j < limitSalary) {
+                System.out.println(new Counter().getId() + " " + n + " " + p + " " + s + " " + d + " " + a);
+            }
+        }
+    }
+
+    public static void scanRich(int limitSalary) {
+        for (Employee i : employee) {
+            int j = i.getSalary();
+            String n = i.getName();
+            String p = i.getPatronymic();
+            String s = i.getSurname();
+            int d = i.getDepartment();
+            int a = i.getSalary();
+            if (j >= limitSalary) {
+                System.out.println(new Counter().getId() + " " + n + " " + p + " " + s + " " + d + " " + a);
+            }
+        }
+    }
+
+
 }
