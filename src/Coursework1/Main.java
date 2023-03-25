@@ -189,7 +189,7 @@ public class Main {
             int d = i.getDepartment();
             int a = i.getSalary();
             if (j < limitSalary) {
-                System.out.println(new Counter().getId() + " " + n + " " + p + " " + s + " " + d + " " + a);
+                System.out.println(Counter.getId() + " " + n + " " + p + " " + s + " " + d + " " + a);
             }
         }
     }
@@ -203,7 +203,7 @@ public class Main {
             int d = i.getDepartment();
             int a = i.getSalary();
             if (j >= limitSalary) {
-                System.out.println(new Counter().getId() + " " + n + " " + p + " " + s + " " + d + " " + a);
+                System.out.println(Counter.getId() + " " + n + " " + p + " " + s + " " + d + " " + a);
             }
         }
     }

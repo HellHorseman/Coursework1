@@ -1,7 +1,7 @@
 package Coursework1;
 
 public class Employee {
-
+    private int id;
     private String name;
     private String patronymic;
     private String surname;
@@ -9,6 +9,7 @@ public class Employee {
     private int salary;
 
     public Employee(String name, String patronymic, String surname, int department, int salary) {
+        this.id = Counter.getId();
         this.name = name;
         this.patronymic = patronymic;
         this.surname = surname;
@@ -48,7 +49,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{id= " + new Counter().getId() +
+        return "Employee{id= " + id +
                 " name='" + name + '\'' +
                 ", patronymic='" + patronymic + '\'' +
                 ", surname='" + surname + '\'' +
