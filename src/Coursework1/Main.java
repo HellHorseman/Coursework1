@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         EmployeeBook employeeBook = new EmployeeBook();
         employeeBook.addEmployee("Имя", "Отчество", "Фамилия", 1, 120_580);
-        employeeBook.addEmployee("Имя", "Отчество", "Фамилия", 2, 67_035);
+        employeeBook.addEmployee("Имя1", "Отчество1", "Фамилия1", 2, 67_035);
         employeeBook.addEmployee("Имя", "Отчество", "Фамилия", 2, 48_750);
         employeeBook.addEmployee("Имя", "Отчество", "Фамилия", 3, 35_690);
         employeeBook.addEmployee("Имя", "Отчество", "Фамилия", 3, 33_480);
@@ -14,11 +14,11 @@ public class Main {
         employeeBook.addEmployee("Имя", "Отчество", "Фамилия", 4, 17_098);
         employeeBook.addEmployee("Имя", "Отчество", "Фамилия", 5, 18_056);
         employeeBook.addEmployee("Имя", "Отчество", "Фамилия", 5, 20_120);
-//        employeeBook.addEmployee("b", "d", "s", 2,15);
-//        employeeBook.printAllEmployees();
         employeeBook.print();
-      employeeBook.sumSalary();
-        System.out.println("Сумма зарплаты сотрудников " + employeeBook.sumSalary());
+        employeeBook.removeEmployee("Фамилия1 Имя1 Отчество1");
+        employeeBook.print();
+//      employeeBook.sumSalary();
+//        System.out.println("Сумма зарплаты сотрудников " + employeeBook.sumSalary());
 //        scanMinSalary();
 //        scanMaxSalary();
 //        midSalary();

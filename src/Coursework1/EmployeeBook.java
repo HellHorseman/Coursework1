@@ -23,12 +23,17 @@ public class EmployeeBook {
         Employee newEmployee = new Employee(name, patronymic, surname, department, salary);
         employee[size++] = newEmployee;
     }
-//    public void printAllEmployees() {
-//        for (int i = 0; i < size; i++) {
-//            Employee real = employee[i];
-//            System.out.println(real.toString());
-//        }
-//    }
+    public void removeEmployee(String fullName) {
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getFullName().equals(fullName)) {
+                System.out.println(employee[i].getFullName() + " удален");
+                System.arraycopy(employee, i + 1, employee, i, size - i - 1);
+                employee[size - 1] = null;
+                size--;
+                return;
+            }
+        }
+    }
     public void print() {
         for (Employee i : employee) {
             System.out.println(i.getId() + " " + i);
@@ -182,7 +187,7 @@ public class EmployeeBook {
             int d = i.getDepartment();
             int a = i.getSalary();
             if (j < limitSalary) {
-                System.out.println(i.getId() + " " + n + " " + p + " " + s + " " + d + " " + a);
+                System.out.println(i.toString());
             }
         }
     }
