@@ -5,6 +5,7 @@ public class Employee {
     private String name;
     private String patronymic;
     private String surname;
+    private String fullName;
     private int department;
     private int salary;
 
@@ -13,11 +14,14 @@ public class Employee {
         this.name = name;
         this.patronymic = patronymic;
         this.surname = surname;
+        this.fullName = surname + " " + name + " " + patronymic;
         this.department = department;
         this.salary = salary;
     }
 
-
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return this.name;
@@ -31,28 +35,31 @@ public class Employee {
         return this.surname;
     }
 
+    public String getFullName() {
+        return fullName;
+    }
+
     public int getDepartment() {
         return this.department;
+    }
+
+    public void setDepartment(int department) {
+        this.department = department;
     }
 
     public int getSalary() {
         return this.salary;
     }
 
-
-    public void setDepartment(int department) {
-    this.department = department;
-    }
     public void setSalary(int salary) {
         this.salary = salary;
     }
 
     @Override
     public String toString() {
-        return "Employee{id= " + id +
-                " name='" + name + '\'' +
+        return "id= " + id + ", surname='" + surname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
-                ", surname='" + surname + '\'' +
+                " name='" + name + '\'' +
                 ", department=" + department +
                 ", salary=" + salary +
                 '}';
