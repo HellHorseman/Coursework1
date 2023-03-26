@@ -15,30 +15,28 @@ public class Main {
         employeeBook.addEmployee("Имя9", "Отчество9", "Фамилия9", 5, 18_056);
         employeeBook.addEmployee("Имя10", "Отчество10", "Фамилия10", 5, 20_120);
         employeeBook.printAllEmployee();
-//        employeeBook.removeEmployee("Фамилия2 Имя2 Отчество2", 2);
-//        employeeBook.printAllEmployee();
-//        employeeBook.addEmployee("er", "iu", "hu",4,100);
-//        employeeBook.printAllEmployee();
-employeeBook.changeEmployeeSalary("Фамилия3 Имя3 Отчество3");
-employeeBook.changeEmployeeDepartment("Фамилия3 Имя3 Отчество3");
-//      employeeBook.sumSalary();
-//        System.out.println("Сумма зарплаты сотрудников " + employeeBook.sumSalary());
-//        scanMinSalary();
-//        scanMaxSalary();
-//        midSalary();
-//        printEmployeeNames();
-//        indexSalary();
-//        minDeptSal(3);
-//        maxDeptSal(5);
-//        sumDeptSal(2);
-//        midDeptSal(4);
-//        indexDeptSal(1, 15);
-//        printDeptEmp(5);
-//        employeeBook.scanPoor(30000);
-//        scanRich(30000);
+        employeeBook.removeEmployee("Фамилия2 Имя2 Отчество2", 2);
+        employeeBook.printAllEmployee();
+        employeeBook.addEmployee("er", "iu", "hu", 4, 100);
+        employeeBook.printAllEmployee();
+        employeeBook.changeEmployeeSalary("Фамилия3 Имя3 Отчество3");
+        employeeBook.changeEmployeeDepartment("Фамилия3 Имя3 Отчество3");
+        employeeBook.sumSalary();
+        System.out.println("Сумма зарплаты сотрудников " + employeeBook.sumSalary());
+        employeeBook.scanMinSalary();
+        employeeBook.scanMaxSalary();
+        employeeBook.printEmployeeNames();
+        employeeBook.indexSalary();
+        employeeBook.minDeptSal(3);
+        employeeBook.maxDeptSal(5);
+        employeeBook.sumDeptSal(2);
+        employeeBook.midDeptSal(4);
+        employeeBook.indexDeptSal(1, 15);
+        employeeBook.printDeptEmp(5);
+        employeeBook.scanPoor(30000);
+        employeeBook.scanRich(30000);
+        employeeBook.printEmployeeToDepartment();
     }
-
-
 
 
 }
