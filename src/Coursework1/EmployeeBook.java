@@ -1,7 +1,7 @@
 package Coursework1;
 
 public class EmployeeBook {
-    private final Employee[] employee;
+    private Employee[] employee;
 
     private int size;
 
@@ -12,20 +12,25 @@ public class EmployeeBook {
     public Employee[] getEmployee() {
         return employee;
     }
-//
-//    public void setEmployee(Employee[] employee) {
-//        this.employee = employee;
-//    }
-    public void addEmployee(String name, String patronymic, String surname, int department, int salary) {
-        if (size >= employee.length) {
-            System.out.println("Нельзя добавить сотрудника, закончилось место");
-        }
-        Employee newEmployee = new Employee(name, patronymic, surname, department, salary);
-        employee[size++] = newEmployee;
+
+    public void setEmployee(Employee[] employee) {
+        this.employee = employee;
     }
-    public void removeEmployee(String fullName) {
+    public void addEmployee(String name, String patronymic, String surname, int department, int salary) {
         for (int i = 0; i < employee.length; i++) {
-            if (employee[i].getFullName().equals(fullName)) {
+            if (employee[i] == null){
+                Employee newEmployee = new Employee(name, patronymic, surname, department, salary);
+                employee[size++] = newEmployee;
+                break;
+            }
+            if (size >= employee.length) {
+                System.out.println("Нельзя добавить сотрудника, закончилось место");
+            }
+        }
+    }
+    public void removeEmployee(String fullName, int id) {
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getFullName().equals(fullName) || employee.equals(id) ) {
                 System.out.println(employee[i].getFullName() + " удален");
                 System.arraycopy(employee, i + 1, employee, i, size - i - 1);
                 employee[size - 1] = null;
@@ -34,11 +39,35 @@ public class EmployeeBook {
             }
         }
     }
-    public void print() {
-        for (Employee i : employee) {
-            System.out.println(i.getId() + " " + i);
+
+    public void changeEmployeeSalary(String fullName) {
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getFullName().equals(fullName)) {
+                int setter = 0;
+                employee[i].setSalary(setter);
+                System.out.println(employee[i]);
+                return;
+            }
         }
     }
+    public void changeEmployeeDepartment(String fullName) {
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i].getFullName().equals(fullName)) {
+                int setter = 0;
+                employee[i].setDepartment(setter);
+                System.out.println(employee[i]);
+                return;
+            }
+        }
+    }
+    public void printAllEmployee() {
+        for (int i = 0; i < size; i++) {
+            Employee data = employee[i];
+            System.out.println(data.toString());
+        }
+        System.out.println();
+    }
+
 
     public int sumSalary() {
         int sumSalary = 0;

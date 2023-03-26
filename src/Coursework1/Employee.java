@@ -43,23 +43,23 @@ public class Employee {
         return this.department;
     }
 
+    public void setDepartment(int department) {
+        this.department = department;
+    }
+
     public int getSalary() {
         return this.salary;
     }
 
-
-    public void setDepartment(int department) {
-    this.department = department;
-    }
     public void setSalary(int salary) {
         this.salary = salary;
     }
 
     @Override
     public String toString() {
-        return  "id= " + id + " name='" + name + '\'' +
+        return "id= " + id + ", surname='" + surname + '\'' +
                 ", patronymic='" + patronymic + '\'' +
-                ", surname='" + surname + '\'' +
+                " name='" + name + '\'' +
                 ", department=" + department +
                 ", salary=" + salary +
                 '}';
